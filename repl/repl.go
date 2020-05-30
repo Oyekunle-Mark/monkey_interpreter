@@ -9,8 +9,10 @@ import (
 	"github.com/Oyekunle-Mark/monkey_interpreter/token"
 )
 
+// PROMPT represents the REPL prompt
 const PROMPT = ">> "
 
+// Start starts the REPL
 func Start(in io.Reader, out io.Writer) {
 	scanner := bufio.NewScanner(in)
 
