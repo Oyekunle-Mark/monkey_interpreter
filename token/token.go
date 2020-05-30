@@ -33,13 +33,13 @@ type Token struct {
 	Literal string
 }
 
-var Keywords = map[string]TokenType{
+var keyWords = map[string]TokenType{
 	"fn":  FUNCTION,
 	"let": LET,
 }
 
 func LookupIdent(ident string) TokenType {
-	if tok, ok := Keywords[ident]; ok {
+	if tok, ok := keyWords[ident]; ok {
 		return tok
 	}
 
