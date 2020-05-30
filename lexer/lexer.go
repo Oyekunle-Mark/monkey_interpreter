@@ -33,7 +33,7 @@ func (l *Lexer) readIdentifier() string {
 		l.readChar()
 	}
 
-	return l.input[position:l.readPosition]
+	return l.input[position:l.position]
 }
 
 func (l *Lexer) readNumber() string {
