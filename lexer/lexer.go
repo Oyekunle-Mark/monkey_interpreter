@@ -2,6 +2,7 @@ package lexer
 
 import "github.com/Oyekunle-Mark/monkey_interpreter/token"
 
+// Lexer is the lexer type
 type Lexer struct {
 	input        string
 	position     int
@@ -9,6 +10,7 @@ type Lexer struct {
 	ch           byte
 }
 
+// New creates and returns a new Lexer
 func New(input string) *Lexer {
 	l := &Lexer{input: input}
 	l.readChar()
@@ -60,6 +62,7 @@ func (l *Lexer) peekChar() byte {
 	return l.input[l.readPosition]
 }
 
+// NextToken moves the pointer forward and returns the token generated
 func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
 	l.skipWhitespace()
