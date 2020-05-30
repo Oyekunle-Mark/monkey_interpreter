@@ -26,8 +26,8 @@ func (l *Lexer) readChar() {
 	l.readPosition++
 }
 
-func (l *lexer) NextToken() token.Token {
-	var token token.Token
+func (l *Lexer) NextToken() token.Token {
+	var tok token.Token
 
 	switch l.ch {
 	case '=':
@@ -53,4 +53,8 @@ func (l *lexer) NextToken() token.Token {
 
 	l.readChar()
 	return tok
+}
+
+func newToken(tokenType token.TokenType, ch byte) token.Token {
+	return token.Token{Type: tokenType, Literal: string(ch)}
 }
